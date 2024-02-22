@@ -3,12 +3,13 @@ const bodyParser = require('body-parser');
 const db = require('./util/database');
 const Book = require('./models/book');
 const homeRoutes = require('./routes/home');
+const cors = require('cors')
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(cors())
+app.use(bodyParser.json({ extended: false }));
+// app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.use('/', homeRoutes);

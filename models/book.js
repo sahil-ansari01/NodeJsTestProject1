@@ -30,6 +30,9 @@ const Book = sequelize.define('book', {
         allowNull: false,
         defaultValue: 0
     },
+    actualReturnDate:{
+        type : Sequelize.DATE
+    },
     finePaid: {
         type: Sequelize.BOOLEAN,
         allowNull: false,
